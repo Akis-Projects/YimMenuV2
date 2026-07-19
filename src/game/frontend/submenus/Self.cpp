@@ -65,11 +65,22 @@ namespace YimMenu::Submenus
 		specialInMp->AddItem(std::make_shared<ConditionalItem>("mpspecialability"_J, std::make_shared<ListCommandItem>("selspecialability"_J, "##specialselect")));
 		specialAbilityGroup->AddItem(std::move(specialInMp));
 
+		auto forcefieldGroup = std::make_shared<Group>("Force Field");
+        forcefieldGroup->AddItem(std::make_shared<BoolCommandItem>("forcefield"_J));
+        forcefieldGroup->AddItem(std::make_shared<ListCommandItem>("forcefieldmode"_J, "Mode"));
+        forcefieldGroup->AddItem(std::make_shared<FloatCommandItem>("forcefieldradius"_J, "Radius"));
+        forcefieldGroup->AddItem(std::make_shared<BoolCommandItem>("forcefieldvehicles"_J, "Vehicles"));
+        forcefieldGroup->AddItem(std::make_shared<BoolCommandItem>("forcefieldobjects"_J, "Objects"));
+        forcefieldGroup->AddItem(std::make_shared<BoolCommandItem>("forcefieldpeds"_J, "Peds"));
+        forcefieldGroup->AddItem(std::make_shared<BoolCommandItem>("forcefieldplayers"_J, "Players"));
+        forcefieldGroup->AddItem(std::make_shared<BoolCommandItem>("forcefieldignorepv"_J, "Ignore Personal Vehicle"));
+
 		main->AddItem(globalsGroup);
 		main->AddItem(toolsGroup);
 		main->AddItem(specialAbilityGroup);
 		main->AddItem(wantedGroup);
 		main->AddItem(movementGroup);
+        main->AddItem(forcefieldGroup);
 		AddCategory(std::move(main));
 
 		AddCategory(BuildWeaponsMenu());
