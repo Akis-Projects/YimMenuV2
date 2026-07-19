@@ -77,6 +77,19 @@ namespace YimMenu
 		}*/
 	}
 
+	void Vehicle::Dismantle()
+	{
+		ENTITY_ASSERT_VALID();
+		ENTITY_ASSERT_CONTROL();
+		ENTITY_ASSERT_SCRIPT_CONTEXT();
+
+		auto veh = GetHandle();
+		int numDoors = VEHICLE::GET_NUMBER_OF_VEHICLE_DOORS(veh);
+
+		for (int door = 0; door < numDoors; door++)
+			VEHICLE::SET_VEHICLE_DOOR_BROKEN(veh, door, false);
+	}
+
 	int Vehicle::GetGear()
 	{
 		ENTITY_ASSERT_VALID();

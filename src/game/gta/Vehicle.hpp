@@ -14,6 +14,7 @@ namespace YimMenu
 
 		// health
 		void Fix();
+		void Dismantle();
 
 		// gears
 		int GetGear();
