@@ -21,6 +21,7 @@ namespace YimMenu::Submenus
 		globals->AddItem(std::make_shared<BoolCommandItem>("vehiclegodmode"_J, "Godmode"));
 		globals->AddItem(std::make_shared<BoolCommandItem>("keepfixed"_J, "Keep Fixed"));
 		globals->AddItem(std::make_shared<BoolCommandItem>("hornboost"_J));
+		globals->AddItem(std::make_shared<BoolCommandItem>("instantbrake"_J));
 		globals->AddItem(std::make_shared<BoolCommandItem>("modifyboostbehavior"_J));
 		globals->AddItem(std::make_shared<ConditionalItem>("modifyboostbehavior"_J, std::make_shared<ListCommandItem>("boostbehavior"_J)));
 		globals->AddItem(std::make_shared<BoolCommandItem>("autodrive"_J));
